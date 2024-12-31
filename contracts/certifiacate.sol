@@ -18,7 +18,7 @@ contract LearnopolyCertificate is ERC721URIStorage, Ownable {
         courseCompletion[user][courseId] = true;
     }
 
-    // Function to mint an NFT certificate
+    
     function issueCertificate(address user, string memory courseId, string memory tokenURI) external onlyOwner {
         require(courseCompletion[user][courseId], "Course not completed!");
         uint256 tokenId = _tokenIdCounter;
@@ -27,12 +27,10 @@ contract LearnopolyCertificate is ERC721URIStorage, Ownable {
         _safeMint(user, tokenId);
         _setTokenURI(tokenId, tokenURI);
 
-        // Reset course completion for re-certification if needed
         courseCompletion[user][courseId] = false;
     }
 
-    // Function to retrieve the total number of certificates issued
     function totalCertificatesIssued() external view returns (uint256) {
-        return _tokenIdCounter - 1; // Subtract 1 as token IDs start from 1
+        return _tokenIdCounter - 1; 
     }
 }
