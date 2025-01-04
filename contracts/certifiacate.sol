@@ -32,24 +32,21 @@ contract LearnopolyCertificate is ERC721URIStorage, Ownable {
         _safeMint(recipient, tokenId);
         _setTokenURI(tokenId, tokenURI);
 
-        // Mark the course as completed and reset the mapping for reusability
+       
         courseCompletion[recipient][courseId] = false;
     }
 
-    /// @notice Get the total number of certificates issued
-    /// @return The total certificates issued
+    
     function totalCertificatesIssued() external view returns (uint256) {
-        return _tokenIdCounter - 1; // Subtract 1 because counter starts at 1
+        return _tokenIdCounter - 1;
     }
 
-    /// @notice Directly mint and send an NFT to any specified wallet address
-    /// @param to The wallet address to send the NFT
-    /// @param tokenURI The metadata URI for the NFT
+    
     function mintNFT(address to, string memory tokenURI) external onlyOwner {
-        uint256 tokenId = _tokenIdCounter; // Get the current token ID
-        _tokenIdCounter++; // Increment the token ID counter
+        uint256 tokenId = _tokenIdCounter; 
+        _tokenIdCounter++; 
 
-        // Mint the NFT and set its metadata URI
+        
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, tokenURI);
     }
