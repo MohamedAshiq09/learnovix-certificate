@@ -10,31 +10,25 @@ contract LearnopolyCertificate is ERC721URIStorage, Ownable {
   
     mapping(address => mapping(string => bool)) public courseCompletion;
 
-    /// @notice Constructor that sets the initial owner and initializes the token
-    /// @param initialOwner The wallet address to set as the initial owner
+
     constructor(address initialOwner) ERC721("LearnopolyCertificate", "LNC") Ownable(initialOwner) {
         _tokenIdCounter = 1; // Initialize the token ID counter
     }
 
-    /// @notice Mark a course as completed for a user
-    /// @param user The user's address
-    /// @param courseId The course ID
+    
     function completeCourse(address user, string memory courseId) external onlyOwner {
         require(!courseCompletion[user][courseId], "Course already completed!");
         courseCompletion[user][courseId] = true;
     }
 
-    /// @notice Issue a certificate NFT to a wallet address
-    /// @param recipient The wallet address to receive the NFT
-    /// @param courseId The course ID the certificate is for
-    /// @param tokenURI The metadata URI for the NFT
+    
     function issueCertificate(address recipient, string memory courseId, string memory tokenURI) external onlyOwner {
         require(courseCompletion[recipient][courseId], "Course not completed!");
         
-        uint256 tokenId = _tokenIdCounter; // Get the current token ID
-        _tokenIdCounter++; // Increment the token ID counter
+        uint256 tokenId = _tokenIdCounter; 
+        _tokenIdCounter++; 
 
-        // Mint the NFT and set its metadata URI
+       
         _safeMint(recipient, tokenId);
         _setTokenURI(tokenId, tokenURI);
 

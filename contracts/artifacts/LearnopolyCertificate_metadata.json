@@ -757,29 +757,11 @@
 				"balanceOf(address)": {
 					"details": "See {IERC721-balanceOf}."
 				},
-				"completeCourse(address,string)": {
-					"params": {
-						"courseId": "The course ID",
-						"user": "The user's address"
-					}
-				},
-				"constructor": {
-					"params": {
-						"initialOwner": "The wallet address to set as the initial owner"
-					}
-				},
 				"getApproved(uint256)": {
 					"details": "See {IERC721-getApproved}."
 				},
 				"isApprovedForAll(address,address)": {
 					"details": "See {IERC721-isApprovedForAll}."
-				},
-				"issueCertificate(address,string,string)": {
-					"params": {
-						"courseId": "The course ID the certificate is for",
-						"recipient": "The wallet address to receive the NFT",
-						"tokenURI": "The metadata URI for the NFT"
-					}
 				},
 				"mintNFT(address,string)": {
 					"params": {
@@ -834,15 +816,6 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {
-				"completeCourse(address,string)": {
-					"notice": "Mark a course as completed for a user"
-				},
-				"constructor": {
-					"notice": "Constructor that sets the initial owner and initializes the token"
-				},
-				"issueCertificate(address,string,string)": {
-					"notice": "Issue a certificate NFT to a wallet address"
-				},
 				"mintNFT(address,string)": {
 					"notice": "Directly mint and send an NFT to any specified wallet address"
 				},
@@ -1022,11 +995,11 @@
 			]
 		},
 		"contracts/certifiacate.sol": {
-			"keccak256": "0xf067af34b906104b7d7f3facf346ddfbf897d5076b82fb5fb6ccd9a0d920566f",
+			"keccak256": "0xd8a69495d9157f8e96c02c5874ac999d062b634f63fcb11a302e702a914c0503",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://68206867d3caf6a299db6192ce1ce85c657e6f91934dbc91d97f8a4f05eb43a1",
-				"dweb:/ipfs/QmZSZkMijmkWnfKZ4SQkWh9Rv5JYNk6MsL6nQBGPqtcwKK"
+				"bzz-raw://1a801555dcdf7e8d935e1fe9b99bb8fa24216b7ade99f8826238a42de4bbdb20",
+				"dweb:/ipfs/QmVRktZ1Xdb4a5VwjCqw1yK7GE2Wdgo2pjwm7SjQCNZ5Jb"
 			]
 		}
 	},
