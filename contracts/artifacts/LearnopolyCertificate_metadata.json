@@ -214,6 +214,94 @@
 				"anonymous": false,
 				"inputs": [
 					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "courseId",
+						"type": "string"
+					}
+				],
+				"name": "CertificateIssued",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "CertificateRevoked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "courseId",
+						"type": "string"
+					}
+				],
+				"name": "CourseCompleted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "courseId",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "courseName",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"name": "CourseCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
 						"indexed": false,
 						"internalType": "uint256",
 						"name": "_tokenId",
@@ -270,6 +358,29 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "courseId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "courseName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"name": "addCourse",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "to",
 						"type": "address"
@@ -302,6 +413,29 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "recipients",
+						"type": "address[]"
+					},
+					{
+						"internalType": "string",
+						"name": "courseId",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "tokenURIs",
+						"type": "string[]"
+					}
+				],
+				"name": "batchIssueCertificates",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -349,6 +483,35 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "courses",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "courseId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "courseName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "tokenId",
 						"type": "uint256"
@@ -368,6 +531,42 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "courseId",
+						"type": "string"
+					}
+				],
+				"name": "getCourseDetails",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "courseId",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "courseName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "description",
+								"type": "string"
+							}
+						],
+						"internalType": "struct LearnopolyCertificate.Course",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "owner",
 						"type": "address"
@@ -379,6 +578,30 @@
 					}
 				],
 				"name": "isApprovedForAll",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "courseId",
+						"type": "string"
+					}
+				],
+				"name": "isCourseCompleted",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -478,6 +701,19 @@
 			{
 				"inputs": [],
 				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "revokeCertificate",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -977,11 +1213,11 @@
 			]
 		},
 		"contracts/certifiacate.sol": {
-			"keccak256": "0x1abedc4441f35ccc06950f31d80963c62ed8207dfd037017df5829dd8d35945b",
+			"keccak256": "0xe92162608752c6486b6dfdfbd7968de7cfdd4cdf72c253f125a22b2352c1dfac",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://73af11b1c4b2b2ef47487fb3a127562675a4c850c1fdfc9aff8c172a9b9f9f3b",
-				"dweb:/ipfs/QmReBimyyP1KATMHF3pjEcoREc21k1HR5WvdmKCNrHFmZe"
+				"bzz-raw://1df96bc9b6d0b2c14e60ca35d706c06cdcdd2f4c3d2194d79577ef628b4f789b",
+				"dweb:/ipfs/QmTdu3hVJRTtpWLcNJHVjeiK886H7bwCc4EiqLycapANEY"
 			]
 		}
 	},
