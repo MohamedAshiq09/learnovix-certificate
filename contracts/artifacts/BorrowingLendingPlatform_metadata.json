@@ -208,20 +208,8 @@
 		"devdoc": {
 			"kind": "dev",
 			"methods": {
-				"borrow(uint256)": {
-					"details": "Borrow funds based on collateral deposited. Users can borrow up to (collateral * 100 / COLLATERAL_RATIO). Example: If the user has 1 ETH as collateral and COLLATERAL_RATIO is 150%, they can borrow up to (1 ETH * 100 / 150) = 0.66 ETH."
-				},
-				"depositCollateral()": {
-					"details": "Deposit collateral into the platform."
-				},
 				"getMaxBorrowable(address)": {
 					"details": "View the user's max borrowable amount."
-				},
-				"repayLoan()": {
-					"details": "Repay borrowed funds. Users must repay their borrowed balance before withdrawing collateral."
-				},
-				"withdrawCollateral(uint256)": {
-					"details": "Withdraw collateral. Users can only withdraw collateral if they have no outstanding loans."
 				}
 			},
 			"version": 1
@@ -249,11 +237,11 @@
 	},
 	"sources": {
 		"contracts/polygon.sol": {
-			"keccak256": "0xfe6e7d988ea28d921cea1dc81a9edc4fb69a6ff5d74155449768a1b27e2725fd",
+			"keccak256": "0x78799c3bf7936d5d8da6acf2b9a4379f97a145fd0b1b7fb33c53519a95f9b951",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1e57da1fe9d037cd6b423c48285271e74b3e8afc5f1d0b19319edc9627e8f0f1",
-				"dweb:/ipfs/QmYQJkxXLT67DtRtBd193x6mY4SUnchpnZRiXnmjR7NdCW"
+				"bzz-raw://bf36db387e02bc24aafc33bf7c38f7065dfc1ec7998b9da0c6effcd1b2a64c25",
+				"dweb:/ipfs/QmUK2iHZ94q6LhSrCxfAvzsAVQGeogTU5rWX3ra4fWpUct"
 			]
 		}
 	},
