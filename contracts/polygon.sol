@@ -2,7 +2,6 @@
 pragma solidity ^0.8.0;
 
 contract BorrowingLendingPlatform {
-    // Events for logging actions
     event Deposited(address indexed user, uint256 amount);
     event Borrowed(address indexed user, uint256 amount);
     event Repaid(address indexed user, uint256 amount);
